@@ -1,6 +1,10 @@
 # dynamic-content-processor
 An overview of how to use reflection and assembly loading to handle dynamic content.
 
+This solution uses .NET Reflection to handle registration of types with base-class objects.  Each of the objects are registered with a base object by the processor system.  This eliminates the need for Interfaces or forward type declaration.  For this example, there is no manager class that needs to be defined that has to know about the 2D and 3D shapes, and the various properties that they have.  A generic method on the base class can then be used to get the individual objects if needed.
+
+To extend on this functionality, each of these items can then have additional configuration options for whether they are enabled, which can rely on configuration settings in a file and/or database.  
+
 To see how the output changes, add or remove the following assemblies from the **Configuration Manager** in the **Build** menu.
 - ProgramOutput.ConsoleOutput: Remove this item to disable writing content to the console window.
 - ProgramOutput.FileOutput: Remove this item to disable writing content to text files.
